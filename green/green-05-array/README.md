@@ -1,0 +1,1 @@
+###This folder contain solutions related to array
