@@ -49,9 +49,14 @@ This is repo to store solutions for algorithm, per solution per module
 ####Why/When
 ####How
 ### Matrix( 2 dimensional array)
-####What
-####Why/When
-####How
+1. Check follow the row
+2. Check follow the column
+3. Check follow the border
+The first row a[0][j], the last row a[n-1][j] , a[i][0] & a[i][-1] if  0 <i < n-1 (n is the number of rows )
+4. Check follow principal diagonal
+We will loop for per row : and get matrix[i][i] (i is the index of current row)
+5. Check follow secondary diagonal
+We will loop for per row : and get matrix[i][n-i-1] (i is the index of current row, n is the the number of rows)
 ### Two Pointer
 ####What
 ####Why/When
