@@ -1,7 +1,6 @@
 "http://codeforces.com/problemset/problem/122/A"
 #technic flag
 
-flag = True
 s = input()
 
 def verify_contain_lucky_number(s):
