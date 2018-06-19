@@ -1,3 +1,4 @@
+
 n = input()
 
 def verify_this_string_contain(my_string):
@@ -12,6 +13,6 @@ def verify_this_string_contain(my_string):
 for _ in range(int(n)):
     my_string = input()
     if verify_this_string_contain(my_string):
-        print('%s contain' % my_string)
+        print('YES')
     else:
-        print('%s doesn"t containt '% my_string)
+        print('NO')

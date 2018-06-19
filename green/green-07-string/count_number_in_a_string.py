@@ -1,4 +1,3 @@
-n = input()
 
 def count_numeric_characters(my_string):
     # technic set flag
@@ -8,7 +7,6 @@ def count_numeric_characters(my_string):
             count +=1
     return count
 
-for _ in range(int(n)):
-    my_string = input()
-    count = count_numeric_characters(my_string)
-    print(count)
+my_string = input()
+count = count_numeric_characters(my_string)
+print(count)

@@ -1,9 +1,3 @@
-"""
-Input: '    bala      sasa      dsds    dsds   '
-output : 'bala sasa dsds dsds'
-"""
-n = input()
-
 def remove_space(my_string):
     # because string is immutable so we have to create a new string and copy it
     res= ''
@@ -17,7 +11,6 @@ def remove_space(my_string):
         elif len(res)>0 and res[-1] != ' ':
             need_a_space = True
     return res
-for _ in range(int(n)):
-    my_string = input()
-    res = remove_space(my_string)
-    print(res)
+my_string = input()
+res = remove_space(my_string)
+print(res)
