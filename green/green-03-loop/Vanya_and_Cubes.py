@@ -1,13 +1,13 @@
 s = int(input())
 height = 0
-num_current_height =1
-def get_current_heigh(index):
+def need_cubes_for_index(index):
     count = 0
     for i in range(index+1):
         count +=i
     return count
+
 while s >=0:
-    s -= get_current_heigh(height+1)
-    height +=1
+    height += 1
+    s -= need_cubes_for_index(height)
 
 print(height-1)
