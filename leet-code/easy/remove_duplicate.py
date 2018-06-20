@@ -1,3 +1,4 @@
+"""https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/"""
 def removeduplicate(nums):
     if len(nums) == 0:
         return 0
@@ -13,6 +14,4 @@ def removeduplicate(nums):
 a = [0,0,1,1,1,2,2,3,3,4]
 
 print(removeduplicate(a))
-
 print(a)
-
