@@ -45,9 +45,18 @@ This is repo to store solutions for algorithm, per solution per module
 ####Why/When
 ####How
 ### Recursion
-####What
-####Why/When
-####How
+#### Stack 
+Stack is the data structure (FIFO), This data structure was used mainly for storing memory
+When function was called they will push to stack, and they this fuction finised it will be removed from this stack
+
+Stack and Heap was stored in RAM
+1. Linear Recursion / De qui tuyen tinh
+
+A linear recursive function is a function that only makes a single call to itself each time the function runs
+2. Binary Recursive / De qui nhi phan
+
+Some recursive functions don't just have one call to themself, they have two (or more). Functions with two recursive calls are referred to as binary recursive functions.
+
 ### Matrix( 2 dimensional array)
 1. Check follow the row
 2. Check follow the column
