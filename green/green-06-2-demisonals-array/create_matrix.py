@@ -1,8 +1,10 @@
+import time
 m,n = map(int, input().split())
 a,b, p  = map(int,input().split())
 arr = []
 pre = a
 current =b
+start_time = time.time()
 
 for i in range(m):
     tmp =[]
