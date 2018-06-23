@@ -28,3 +28,45 @@ class LinkedList(object):
         pass
     def remove_head(self):
         pass
+
+    def get_min(self):
+        # Return the min value of linked list
+        my_node = my_linked_list.head
+        min = my_node.data
+        while (my_node):
+            if my_node.data < min:
+                min = my_node.data
+            my_node = my_node.next
+
+        return min
+
+    def count(self,x):
+        count = 0
+        my_node = my_linked_list.head
+        while (my_node):
+            if my_node.data == x:
+                count +=1
+            my_node= my_node.next
+        return count
+    
+    def insert_tail(self, node):
+        # first we have link the current tail to the next tail
+        #first verify this linkedlist is empty or not
+        if (self.head == self.tail == None):
+            #initilize
+            self.head= self.tail = node
+        else:
+            self.tail.next = node
+            # update the tail
+            self.tail = node
+
+my_linked_list = LinkedList()
+my_linked_list.insert_tail(Node(7))
+my_linked_list.insert_tail(Node(-2))
+my_linked_list.insert_tail(Node(99))
+my_linked_list.insert_tail(Node(10))
+my_linked_list.insert_tail(Node(99))
+
+min = my_linked_list.get_min()
+print(my_linked_list.count(min))
+
