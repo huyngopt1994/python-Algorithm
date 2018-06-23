@@ -29,9 +29,24 @@ This is repo to store solutions for algorithm, per solution per module
 ####Why/When
 ####How
 ### Stack/Queue/Heap
-####What
-####Why/When
-####How
+Stack is data structure first in last out , This data structure was used in storing memory 
+Implement : 
+1.We can use a list to implement stack :
+ Use append to store to a list
+ Use pop to get value from a list
+Using 
+Queue is data structure first in first out. This data structure mainly was used in scheduling tasks
+Implement : We can use 2 ways to implement 
+1. Using list : 
+- When we want to insert a new , use insert(0,item) => but it's a bad way because it's O(n) algorithm 
+when we insert or delete at the begining, every item have to move and reindex 
+- Use pop to get value from a list
+Because of this, please use `collections.deque`, In short this data structure will make insert or delete at beginning nearly O(1)
+Read this link for get more useful information `https://docs.python.org/2/library/collections.html#collections.deque`
+Step:
++ Insert data : using `appendleft`
++ Remove data : using `pop`
+
 ### Binary Tree
 ####What
 ####Why/When
@@ -79,11 +94,15 @@ We will loop for per row : and get matrix[i][n-i-1] (i is the index of current r
 ####Why/When
 ####How
 ### Breath First Search
-####What
-####Why/When
-####How
+Use breath First Search to find the shortest path, implement on graph data 
+They will answer 2 questions :
+1. If have any path from node `A` to node `B`
+2. What is the shortest path from node `A` to node `B`.
 ### Deep First Search
-####What
-####Why/When
-####How
-
+### Graph
+It's data structure which include nodes and edge,(they are a set of connection)
+ 
+`node a` have arrows to `node b` and `node c` => `node b` and `node c` are `node a` neighbours
+1. Direct graph is only one way relationship , it's meaning some nodes have arrows toward them, but they don't have arrow
+for another nodes
+2. 

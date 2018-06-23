@@ -6,5 +6,5 @@ def gcd(a, b):
     r = a %b
     return gcd(b,r)
 
-result = gcd(12,18)
-print(result)
+a, b = map(int,input().split())
+print(gcd(a,b))

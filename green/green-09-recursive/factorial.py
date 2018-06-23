@@ -7,4 +7,5 @@ def fac(n):
     # it will call it your self but with smaller vallue
     return n*fac(n-1)
 
-print(fac(4))
+n = int(input())
+print(fac(n))
