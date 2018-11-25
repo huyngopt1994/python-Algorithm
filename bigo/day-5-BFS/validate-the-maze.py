@@ -1,53 +1,72 @@
 # https://www.spoj.com/problems/MAKEMAZE/fbclid=IwAR1qCNiAcybrweV9haxuL-auJg99ShNY8jvp2Qg66CHzy0IYFXEW6WLjqng
-from copy import deepcopy
-def find_path_using_bts(start, end , edges):
-    """Just find a path from start to end with edges."""
-def build_edges(dots, graph):
-    """We have a lot of dots , how"""
+
+import queue
 
 
-    # 2 dot have direct path ,
-    #  we they have same col , but ( row +=1)
-    # we have same row , but (col +=1)
-    copy_dots = deepcopy(dots)
-    for dot in copy_dots:
-        del copy_dots
-        for
+class Pair():
+    def __init__(self, a, b):
+        self.x = a
+        self.y = b
 
 
-t = int(input())
-for _ in range(t):
-    graph = {}
-    edges = []  # just collect
-    # first ly need to check
-    row, col = list(map(int, input()))
-    # we just have 2 dots in border following this logic
-    dot_in_borders = []
-    dots = []
-    for index_r in range(row):
-        if index_r in [0, row - 1]:
-            # first row
-            row_data = input()
-            for index_c in range(col):
-                if row_data[index_c] == '.':
-                    dot_in_borders.append([index_r, index_c])
-                    dots.append([index_r, index_c])
-                    graph[(index_r, index_c)] = []
+def is_valid(u, maze, row, col):
+    # very is a point is valid or not
+    return u.x >= 0 and u.x < row and u.y >= 0 and u.y < col and maze[u.x][u.y] == '.'
 
+
+def BFS(start, end, maze, row, col):
+    """
+
+    :param start: node for start.
+    :param end: node for end.
+    :param maze: list of strings.
+    :return:
+    """
+    dh = [0, -1, 0, 1]
+    dc = [1, 0, -1, 0]
+
+    # Build visited
+    visited = [[False for xx in range(col)] for yy in range(row)]
+    visited[start.x][start.y] = True
+
+    # build a Queue
+    q = queue.Queue()
+    q.put(start)
+    while not q.empty():
+        u = q.get()
+        for k in range(4):
+            v = Pair(u.x + dh[k], u.y + dc[k])
+            if is_valid(v, maze, row, col) and not visited[v.x][v.y]:
+                visited[v.x][v.y] = True
+                if v.x == end.x and v.y == end.y:
+                    # we find this node
+                    return True
+                q.put(v)
+    return False
+
+
+if __name__ == '__main__':
+
+    t = int(input())
+    for _ in range(t):
+        # firstly need to check
+        row, col = list(map(int, input().split()))
+        maze = []
+        # we just have 2 dots in border following this logic
+        # loop per row : and append the input
+        for _ in range(row):
+            maze.append(input())
+        points = []
+        # loop for  per row
+        for i in range(0, row):
+            for j in range(0, col):
+                if maze[i][j] == '.' and (i == 0 or j == 0 or i == row - 1 or j == col - 1):
+                    points.append(Pair(i, j))
+
+        if len(points) == 2:
+            if BFS(points[0], points[1], maze, row, col):
+                print('valid')
+            else:
+                print('invalid')
         else:
-            # the middle row
-            row_data = input()
-            if row_data[0] == '.':
-                dot_in_borders.append([index_r, 0])
-            elif row_data[col - 1] == '.':
-                dot_in_borders.append([index_r, col - 1])
-
-            for index_c in range(col):
-                if row_data[index_c] == '.':
-                    dots.append([index_r, index_c])
-                    graph[(index_r, index_c)] = []
-    if len(dot_in_borders) != 2:
-        print('invalid')
-    else:
-        build_edges(dots, graph)
-        find_path_using_bts(start=dot_in_borders[0], end=dot_in_borders[1], edges=dots)
+            print('invalid')
