@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is repo to store solutions for algorithm, per solution per module
+This is repo to store solutions, my learning about data structure and algorithms from multiple sources.
 ## Knowledge
 ### String
 ####What
