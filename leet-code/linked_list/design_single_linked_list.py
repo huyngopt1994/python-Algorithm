@@ -27,7 +27,8 @@ class MyLinkedList:
             return self.head.val
 
         traversed_node = self.head
-        # we should traverse index -1  time
+        # we should traverse index time because we start from zero
+        # for example we want to access index 2 , so we need jump 2 times
         for i in range(1, index + 1):
             # next for index -1 times
             traversed_node = traversed_node.next
